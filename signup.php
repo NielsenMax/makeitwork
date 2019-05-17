@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate username
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter a username.";
+        $username_err = "Por favor ingrese un nombre de usuario.";
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
@@ -30,12 +30,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->store_result();
                 
                 if($stmt->num_rows == 1){
-                    $username_err = "This username is already taken.";
+                    $username_err = "Este nombre de usuario ya esta registrado.";
                 } else{
                     $username = trim($_POST["username"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Algo salio mal, Intentelo mas tarde";
             }
         }
          
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Validate email
     if(empty(trim($_POST["email"]))){
-        $email_err = "Please enter a email.";
+        $email_err = "Por favor ingrese un email.";
     } else{
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         // Prepare a select statement
@@ -64,12 +64,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt->store_result();
                 
                 if($stmt->num_rows == 2){
-                    $email_err = "This email is already in use.";
+                    $email_err = "Este email ya esta en uso.";
                 } else{
                     $email = trim($_POST["email"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Algo salio mal, Intentelo mas tarde";
             }
         }
          
@@ -79,20 +79,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate password
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";     
+        $password_err = "Por favor ingrese una contraseña.";     
     } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+        $password_err = "La contraseña debe ser de al menos de 6 caracteres.";
     } else{
         $password = trim($_POST["password"]);
     }
     
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm password.";     
+        $confirm_password_err = "Por favor ingrese la contraseña otra vez para confirmar.";     
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
+            $confirm_password_err = "Las contraseñas no coinciden.";
         }
     }
     
@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Redirect to login page
                 header("location: login.php");
             } else{
-                echo "Something went wrong. Please try again later.";
+                echo "Oops! Algo salio mal, Intentelo mas tarde";
             }
         }
          
@@ -141,11 +141,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <h2>Registro</h2>
+        <p>Por favor complete este formulario para crear la cuenta.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
+                <label>Nombre de usuario</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div> 
@@ -155,20 +155,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="help-block"><?php echo $email_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
+                <label>Contraseña</label>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirm Password</label>
+                <label>Confirme la contraseña</label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="submit" class="btn btn-primary" value="Enviar">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p>Ya tienes cuenta? <a href="login.php">Inicie sesion aqui!</a>.</p>
         </form>
     </div>    
 </body>

@@ -13,7 +13,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Bienvenido</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }
@@ -21,11 +21,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1>Hola, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a MakeItWork.</h1>
     </div>
     <p>
-        <a href="resetpssw.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        <a href="resetpssw.php" class="btn btn-warning">Cambie su contraseña</a>
+        <a href="logout.php" class="btn btn-danger">Cerrar sesion</a>
     </p>
 </body>
 </html>

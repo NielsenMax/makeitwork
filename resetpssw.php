@@ -20,20 +20,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate new password
     if(empty(trim($_POST["new_password"]))){
-        $new_password_err = "Please enter the new password.";     
+        $new_password_err = "Por favor ingrese su nueva contraseña";     
     } elseif(strlen(trim($_POST["new_password"])) < 6){
-        $new_password_err = "Password must have atleast 6 characters.";
+        $new_password_err = "La contraseña debe ser de al menos 6 caracteres.";
     } else{
         $new_password = trim($_POST["new_password"]);
     }
     
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm the password.";
+        $confirm_password_err = "Por favor confirme la contraseña.";
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($new_password_err) && ($new_password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
+            $confirm_password_err = "Las contraseñas no coinciden.";
         }
     }
         
@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location: login.php");
                 exit();
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Oops! Algo salio mal, Intentelo mas tarde.";
             }
         }
         
@@ -83,22 +83,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Reset Password</h2>
-        <p>Please fill out this form to reset your password.</p>
+        <h2>Cambio de contraseña</h2>
+        <p>Por favor complete el formulario para el cambio de contraseña.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <label>New Password</label>
+                <label>Nueva contraseña</label>
                 <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
                 <span class="help-block"><?php echo $new_password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirm Password</label>
+                <label>Confirme la contraseña</label>
                 <input type="password" name="confirm_password" class="form-control">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link" href="welcome.php">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="Enviar">
+                <a class="btn btn-link" href="welcome.php">Cancelar</a>
             </div>
         </form>
     </div>    
