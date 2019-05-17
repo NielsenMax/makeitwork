@@ -4,8 +4,8 @@ require_once "config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $email="";
-$username_err = $password_err = $confirm_password_err = $email_err= $empresa_err= "";
-$empresa = false;
+$username_err = $password_err = $confirm_password_err = $email_err=  "";
+
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -100,21 +100,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($email_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, email, password, empresa) VALUES (?, ?, ?,?)";
+        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sssi", $param_username, $param_email,$param_password,$param_empresa);
+            $stmt->bind_param("sss", $param_username, $param_email,$param_password);
             
             // Set parameters
             $param_username = $username;
             $param_email = $email;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            if($_POST["empresa"]=="yes"){
-                $param_empresa = true;
-            }else{
-                $param_empresa = false;
-            }    
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash  
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
@@ -168,10 +163,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Confirm Password</label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div>
-                <label>Eres una empresa? </label>
-                <input type="checkbox" name="empresa" value="yes">Si<br>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
