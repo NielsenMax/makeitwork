@@ -93,31 +93,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="login.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
     </style>
 </head>
 <body>
+     
     <div class="wrapper">
-        <h2>Inicio de sesion</h2>
-        <p>Por favor ingrese sus datos para iniciar sesion.</p>
+        <h2 class="Titulo">Inicio de sesion</h2>
+        <p class="descripcion">Por favor ingrese sus datos para iniciar sesion.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Nombre de usuario</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Contraseña</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                
+                <input type="text" name="username" placeholder="Nombre de Usuario" class="input">
+                <span class="underlineU"></span>
+            </div>  
+            <br>  
+            <div class="form-group">
+                
+                <input type="password" name="password" placeholder="Contraseña" class="input">
+                <span class="underlineP"></span>
             </div>
-            <p>No tienes cuenta? <a href="signup.php">Registrese aqui</a>.</p>
+            <br>
+            <div >
+                <input type="submit" class="button" value="Login" >
+            </div>
+            <p class="descripcion">No tienes cuenta? <a href="signup.php">Registrese aqui</a>.</p>
         </form>
     </div>    
 </body>
