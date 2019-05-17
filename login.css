@@ -1,0 +1,144 @@
+.button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    display: block;
+    margin: auto;
+
+    
+    }
+  
+  .button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px gray;
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  .Titulo{
+    text-align: center;
+    color:  black;
+    
+}
+body{
+    
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    margin: auto;
+    background-image: url(fondo-index.jpg);
+    background-size: 100vmax;
+   
+
+}
+.wrapper{
+   zoom: 170%;
+    display: block;
+    margin: auto;
+}
+.help-block{
+    color: red;
+    
+}
+.form-control{
+  display: block;
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  border-: #2EE59D;
+   
+}
+.descripcion{
+  text-align: center;
+
+}
+
+/*.wrapper {
+  
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px #DDD;
+  box-sizing: border-box;
+  height: 300px;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  position: absolute;
+  top: 50%;
+  width: 300px;
+}*/
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
+  left: 50%;
+  margin: -25px 0 0 -100px;
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  width: 200px;
+
+  
+}
+.input:focus {
+  outline: none;    
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.input:focus+.underlineP {
+  transform: scale(1);
+}
+.input:focus+.underlineU {
+  transform: scale(1);
+}
+
+.underlineP{
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  left: 282px;
+  margin-top: -4px;
+  position: absolute;
+  top: 194px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
+}
+.underlineU{
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  left: 282px;
+  margin-top: -4px;
+  position: absolute;
+  top: 145px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
+}
