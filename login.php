@@ -106,14 +106,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h2 class="Titulo">Inicio de sesion</h2>
         <p class="descripcion">Por favor ingrese sus datos para iniciar sesion.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
+            <div class="form-group" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
                 
+                <span class="help-block"><?php echo $username_err; ?></span>
                 <input type="text" name="username" placeholder="Nombre de Usuario" class="input">
+                
                 <span class="underlineU"></span>
             </div>  
             <br>  
-            <div class="form-group">
+            <div class="form-group"<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>>
                 
+                <span class="help-block"><?php echo $password_err; ?></span>
                 <input type="password" name="password" placeholder="Contraseña" class="input">
                 <span class="underlineP"></span>
             </div>
