@@ -86,11 +86,11 @@ body{
   font-family: 'Arvo';
   font-size: 18px;
   height: 50px;
-  left: 50%;
+ /* left: 50%;
   margin: -25px 0 0 -100px;
   padding: 10px 0px;
   position: relative;
-  top: 50%;
+  top: 50%;*/
   width: 200px;
 
   
@@ -116,12 +116,12 @@ input:focus::-webkit-input-placeholder {
 
 .underlineP{
   background-color: dodgerblue;
-  display: inline-block;
+  /*display: inline-block;*/
   height: 2px;
-  left: 282px;
+  /*left: 282px;
   margin-top: -4px;
   position: absolute;
-  top: 194px;
+  top: 194px*/;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
   -webkit-transition: all 0.5s linear;
@@ -132,13 +132,19 @@ input:focus::-webkit-input-placeholder {
   background-color: dodgerblue;
   display: inline-block;
   height: 2px;
-  left: 282px;
+  /*left: 40%;
   margin-top: -4px;
-  position: absolute;
-  top: 145px;
+  position: relative;*/
+  
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
   width: 202px;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
