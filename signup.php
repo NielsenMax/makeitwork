@@ -133,7 +133,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="singup.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }
@@ -141,32 +141,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Registro</h2>
+        <h2 class="Titulo">Registro</h2>
         <p>Por favor complete este formulario para crear la cuenta.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Nombre de usuario</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                
                 <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" placeholder="Nombre de usuario" name="username" class="input" value="<?php echo $username; ?>">
+                <span class="underlineU"></span>
             </div> 
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                <label>Email</label>
-                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+                                
                 <span class="help-block"><?php echo $email_err; ?></span>
+                <input type="text" placeholder="Email" name="email" class="input" value="<?php echo $email; ?>">
+                <span class="underlineU"></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Contraseña</label>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+
                 <span class="help-block"><?php echo $password_err; ?></span>
+                <input type="password" placeholder="Contraseña"name="password" class="input" value="<?php echo $password; ?>">
+                <span class="underlineU"></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirme la contraseña</label>
-                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+                
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                <input type="password"placeholder="Confirme la contraseña" name="confirm_password" class="input" value="<?php echo $confirm_password; ?>">
+                <span class="underlineU"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-                <input type="reset" class="btn btn-default" value="Reset">
+            <div class="buttongroup">
+                <br>
+                <input type="submit" class="button" value="Enviar">
+                <input type="reset" class="button" value="Reset">
             </div>
             <p>Ya tienes cuenta? <a href="login.php">Inicie sesion aqui!</a>.</p>
         </form>
