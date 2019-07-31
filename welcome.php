@@ -7,6 +7,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+$idDeSesion = $_SESSION['id'];
 ?>
  
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         body{ font: 14px sans-serif; text-align: center; }
     </style>-->
     <link rel="stylesheet" href="welcome.css">
+    <script type="text/javascript" src="testajax.js"></script>
 </head>
 <body>
    <div class="navbar">
@@ -53,5 +55,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
     <p>
     </p>
+    <form name=”mi_form”>
+	<table>
+		<tr>
+ 			<td>Nombre</td>
+			<td><input type="text" id="nombre_empresa"></td>
+		</tr>
+		<tr>
+			<td colspan=”2”><input type="submit" onclick="grabar();" value="agregar"></td>
+	</table>
+</form>
 </body>
 </html>
