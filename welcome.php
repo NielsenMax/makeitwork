@@ -20,7 +20,8 @@ $idDeSesion = $_SESSION['id'];
         body{ font: 14px sans-serif; text-align: center; }
     </style>-->
     <link rel="stylesheet" href="welcome.css">
-    <script type="text/javascript" src="testajax.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="welcomeajax.js"></script>
 </head>
 <body>
    <div class="navbar">
@@ -53,6 +54,7 @@ $idDeSesion = $_SESSION['id'];
     <div class="page-header">
         <h1>Hola, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a MakeItWork.</h1>
     </div>
+    <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <p>
     </p>
     <form name=”mi_form”>
@@ -62,8 +64,16 @@ $idDeSesion = $_SESSION['id'];
 			<td><input type="text" id="nombre_empresa"></td>
 		</tr>
 		<tr>
-			<td colspan=”2”><input type="submit" onclick="grabar();" value="agregar"></td>
+			<td colspan=”2”><input type="button" value="agregar" id="agregarEmpresa"></td>
+      <td colspan=”2”><input type="button" value="mostrar" id="mostrarEmpresa"></td>
 	</table>
 </form>
+  <table id="output">
+  <tr>
+    <td>Id del dueño</td>
+    <td>nombre</td>
+  </tr>
+ 
+  </table>
 </body>
 </html>
