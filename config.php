@@ -26,5 +26,13 @@ create table if not exists empresas(
     name varchar(255),
     FOREIGN KEY (idOwner) REFERENCES users(id) 
 );");
+$mysqli->query("
+create table if not exists usersDeEmpresas(
+    id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
+    idEmpresa int not null,
+    idUser int not null,
+    FOREIGN KEY (idUser) REFERENCES users(id),
+    FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
+);");
 
 ?>

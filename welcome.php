@@ -65,23 +65,17 @@ $idDeSesion = $_SESSION['id'];
 		</tr>
 		<tr>
 			<td colspan=”2”><input type="button" value="agregar" id="agregarEmpresa"></td>
-      <td colspan=”2”><input type="button" value="mostrar" id="mostrarEmpresa"></td>
+      <td colspan=”2”><input type="button" value="mostrar mis empresas" id="display"></td>
 	</table>
 </form>
-  <table id="output">
-  <tr >
-    <td >Id del dueño</td>
-    <td>nombre</td>
-  </tr>
-  <tr >
-</tr>
  
   </table>
-  <h3 >Manage Student Details</h3>
+  <h3 >Todas las empresas</h3>
+  <div id="respAddU" >
   <table  >
-   <tr>
+   <!--<tr>
        <td> <input type="button" id="display" value="Display All Data" /> </td>
-   </tr>
+   </tr>-->
 </table>
 <div id="responsecontainer" >
 </body>
