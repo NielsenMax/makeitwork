@@ -19,6 +19,7 @@ CREATE TABLE if not exists `users` (
     `email` varchar(255) DEFAULT NULL unique key,
     `password` varchar(255) DEFAULT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+
 $mysqli->query("
 create table if not exists empresas(
     id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
@@ -26,6 +27,7 @@ create table if not exists empresas(
     name varchar(255),
     FOREIGN KEY (idOwner) REFERENCES users(id) 
 );");
+
 $mysqli->query("
 create table if not exists usersDeEmpresas(
     id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,

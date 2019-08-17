@@ -29,11 +29,19 @@ $idDeSesion = $_SESSION['id'];
             <button class="dropbtn"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
             <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content">
+            <div class="dropdown-content" >
                 <a href="resetpssw.php" >Cambie su contraseña</a>
                 <a href="logout.php" >Cerrar sesion</a>
             </div>
         </div> 
+        <div class="dropdown">
+            <button class="dropbtn" id="display"><b>Empresas</b>
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="responsecontainer" >
+                
+            </div>
+        </div>
     </div>
 
     <!--<div class="navbar">
@@ -57,7 +65,7 @@ $idDeSesion = $_SESSION['id'];
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <p>
     </p>
-    <form name=”mi_form”>
+    <!--<form name=”mi_form”>
 	<table>
 		<tr>
  			<td>Nombre</td>
@@ -73,10 +81,10 @@ $idDeSesion = $_SESSION['id'];
   <h3 >Todas las empresas</h3>
   <div id="respAddU" >
   <table  >
-   <!--<tr>
+   <tr>
        <td> <input type="button" id="display" value="Display All Data" /> </td>
-   </tr>-->
+   </tr>
 </table>
-<div id="responsecontainer" >
+<div id="responsecontainer" >-->
 </body>
 </html>

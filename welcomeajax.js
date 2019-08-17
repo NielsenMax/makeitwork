@@ -38,7 +38,7 @@ $(document).ready(function(){
             });
     }*/
   
-    $("#display").click(function printData() { 
+    $("#display").hover(function printData() { 
     $.ajax({    //create an ajax request to display.php
         type: "GET",
         data: {"idOwner" : $("#idOwner").val()},
@@ -54,11 +54,11 @@ $(document).ready(function(){
 
      });
     });
-  
+    /*
     $(document).on('click', '.addU', function(){
         var idEmp = jQuery(this).attr("id");
         var idInp = "#email"+idEmp; 
-        console.log($(idInp).val());
+        $(idInp).hide();
         $.ajax({    //create an ajax request to display.php
             type: "POST",
             data: {"idEmpresa" : idEmp, "email" : $(idInp).val() },
@@ -74,5 +74,5 @@ $(document).ready(function(){
     
          });
     });
-  
+  */
 });
