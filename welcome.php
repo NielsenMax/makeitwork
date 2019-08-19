@@ -23,6 +23,9 @@ $idDeSesion = $_SESSION['id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="welcomeajax.js"></script>
 </head>
+
+<body style="background-image:url(fondo-index.jpg)"> 
+
 <body>
    <div class="navbar">
         <div class="dropdown">
@@ -60,13 +63,63 @@ $idDeSesion = $_SESSION['id'];
 </div>-->
 
     <div class="page-header">
-        <h1>Hola, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a MakeItWork.</h1>
+        <h1 style="">Hola, <i><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></i>.</h1>
+        <h1 class="Roboto">Bienvenido a <i>MakeItWork</i>.</h1>
     </div>
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <p>
     </p>
-    <!--<form name=”mi_form”>
-	<table>
+    <form name=”mi_form”>
+    <head>
+      <title>Title of the document</title>
+   </head>
+    <body>
+      <div class="flex">
+        <input type="button" id="foo" class="button" onclick="empresaC()" value="Nueva empresa"/>
+        <input type="button" id="foo2" class="button" onclick="empresaM()" value="Ver mis empresas"/>
+      </div>
+      <script>
+        function empresaC() {
+          document.getElementById('empresaCreacion').style.display = "";
+          document.getElementById('empresaMuestreo').style = "display:none;"
+          document.getElementById('foo').setAttribute("class", "button2");
+          document.getElementById('foo2').setAttribute("class", "button");
+        }
+        function empresaM() {
+          document.getElementById('empresaMuestreo').style.display = "";
+          document.getElementById('empresaCreacion').style = "display:none;"
+          document.getElementById('foo2').setAttribute("class", "button2");
+          document.getElementById('foo').setAttribute("class", "button");
+        }
+        </script>
+    </body>
+
+
+    <body>
+    <div align="center" id="empresaCreacion" style="display:none;">
+        <h2 class="Titulo">Crear una empresa</h2>
+        <p>Por favor complete los siguientes campos para crear una nueva empresa.</p>
+
+        <span class="help-block"></span>
+        <input type="text" placeholder="Nombre" name="username" class="input">
+        <span class="underlineU"></span>
+
+        <br>
+                <input type="submit" class="button" value="Crear">
+                <input type="reset" class="button" value="Resetear">
+
+    </div>
+      </body>
+    <body>
+    <div align="center" id="empresaMuestreo" style="display:none;">
+        <h2 class="Titulo">Mis empresas</h2>
+        <p>Estas son las empresas que usted ya creó.</p>
+    </div>
+      </body>
+
+
+
+	<!--<table>
 		<tr>
  			<td>Nombre</td>
 			<td><input type="text" id="nombre_empresa"></td>
@@ -74,17 +127,17 @@ $idDeSesion = $_SESSION['id'];
 		<tr>
 			<td colspan=”2”><input type="button" value="agregar" id="agregarEmpresa"></td>
       <td colspan=”2”><input type="button" value="mostrar mis empresas" id="display"></td>
-	</table>
+	</table>-->
 </form>
- 
-  </table>
+
+  <!--</table>
   <h3 >Todas las empresas</h3>
   <div id="respAddU" >
   <table  >
    <tr>
        <td> <input type="button" id="display" value="Display All Data" /> </td>
    </tr>
-</table>
-<div id="responsecontainer" >-->
+</table>-->
+<div id="responsecontainer" >
 </body>
 </html>

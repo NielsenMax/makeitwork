@@ -14,14 +14,14 @@ $(document).ready(function(){
             }).fail( function( jqXHR, textStatus, errorThrown ) {
                 console.log( textStatus );
             });
-            /*$.post(
+            $.post(
                 '../crearEmpresa.php',
                 {"name" : $(".nombre_empresa").val()},
                 function (data, status, xhr) {
                     alert('Request status: ' + status);
                     alert(data);
                 }
-            );*/
+            );
         }
     );
     /*$("#display").on('click',printData());
