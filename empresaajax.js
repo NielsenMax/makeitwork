@@ -47,4 +47,21 @@ $(document).ready(function(){
             }
         });
     });
+    $('#usern').click(function (){
+        window.location = "welcome.php";
+    });
+    $("#mostrar").click(function() { 
+        $.ajax({    //create an ajax request to display.php
+            type: "GET",
+            data: {"idEmp" : $("#idEmp").val()},
+            url: "mostrarUsuarios.php",             
+            dataType: "html",   //expect html to be returned                
+            success: function(response){                    
+                $("#responsecontainer2").html(response); 
+                //alert(response);
+            }
+    
+        });
+      });
+    
 });
