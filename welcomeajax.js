@@ -24,19 +24,20 @@ $(document).ready(function(){
             );
         }
     );
-    /*$("#display").on('click',printData());
+    $("#foo2").on('click',printData());
     function printData(){
        $.ajax({    //create an ajax request to display.php
         type: "GET",
-        url: "mostrarEmpresas.php",             
+        data: {"idOwner" : $("#idOwner").val() },
+        url: "mostrarTodasTusEmpresas.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
-            $("#responsecontainer").html(response); 
+            $("#empresasCreadas").html(response); 
             //alert(response);
         }
 
             });
-    }*/
+    }
   
     $("#display").hover(function printData() { 
     $.ajax({    //create an ajax request to display.php
@@ -54,25 +55,4 @@ $(document).ready(function(){
 
      });
     });
-    /*
-    $(document).on('click', '.addU', function(){
-        var idEmp = jQuery(this).attr("id");
-        var idInp = "#email"+idEmp; 
-        $(idInp).hide();
-        $.ajax({    //create an ajax request to display.php
-            type: "POST",
-            data: {"idEmpresa" : idEmp, "email" : $(idInp).val() },
-            url: "addUser2Emp.php",             
-            dataType: "html",   //expect html to be returned                
-            success: function(response){                    
-                $("#respAddU").html(response); 
-                //alert(response);
-            },
-            error: function() {
-                console.log("No se ha podido obtener la información");
-            }
-    
-         });
-    });
-  */
 });

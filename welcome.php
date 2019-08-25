@@ -101,11 +101,11 @@ $idDeSesion = $_SESSION['id'];
         <p>Por favor complete los siguientes campos para crear una nueva empresa.</p>
 
         <span class="help-block"></span>
-        <input type="text" placeholder="Nombre" name="username" class="input">
+        <input type="text" placeholder="Nombre" name="username" class="input" id="nombre_empresa">
         <span class="underlineU"></span>
 
         <br>
-                <input type="submit" class="button" value="Crear">
+                <input type="submit" class="button" value="Crear" id="agregarEmpresa">
                 <input type="reset" class="button" value="Resetear">
 
     </div>
@@ -114,6 +114,7 @@ $idDeSesion = $_SESSION['id'];
     <div align="center" id="empresaMuestreo" style="display:none;">
         <h2 class="Titulo">Mis empresas</h2>
         <p>Estas son las empresas que usted ya creó.</p>
+        <div id="empresasCreadas" >
     </div>
       </body>
 
@@ -138,6 +139,5 @@ $idDeSesion = $_SESSION['id'];
        <td> <input type="button" id="display" value="Display All Data" /> </td>
    </tr>
 </table>-->
-<div id="responsecontainer" >
 </body>
 </html>
