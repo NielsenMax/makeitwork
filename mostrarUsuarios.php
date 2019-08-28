@@ -12,20 +12,19 @@ while($i=$resp->fetch_row()){
 echo json_encode($x);*/
 include("config.php");
 //mysqli_select_db("samples",$con);
-$resultid=$mysqli->query("select idUser from usersdeempresas where idEmpresa='".$_GET['idEmp']."';");
-$resulti=mysqli_fetch_row($resultid);
+$resultid=$mysqli->query("select idUser from usersDeEmpresas where idEmpresa='".$_GET['idEmp']."';");
 
 
-foreach($resulti as $res )
+while($res = mysqli_fetch_row($resultid))
 {
-    $result=$mysqli->query("select * from users where id='".$res."';");
+    $result=$mysqli->query("select * from users where id='".$res[0]."';");
     print_r($result);
-    while($data = mysqli_fetch_row($result)){
+    $data = mysqli_fetch_row($result);
     echo"<tr>";
     echo"<th>$data[0]</th>";
     echo"<th>$data[1]</th>";
     echo"<th>$data[2]</th>";
     echo"</tr>";
-}}
+}
 echo "</table>";
 ?>
