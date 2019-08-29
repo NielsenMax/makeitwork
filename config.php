@@ -36,5 +36,22 @@ create table if not exists usersDeEmpresas(
     FOREIGN KEY (idUser) REFERENCES users(id),
     FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
 );");
+$mysqli->query("
+create table if not exists proyectos(
+    id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
+    idEmpresa int not null,
+    estado int not null,
+    name varchar(255) not null,
+    descripcion varchar(255),
+    FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
+);");
+$mysqli->query("
+create table if not exists proyectosDeEmpresas(
+    id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
+    idEmpresa int not null,
+    idProyecto int not null,
+    FOREIGN KEY (idProyecto) REFERENCES proyectos(id),
+    FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
+);");
 
 ?>
