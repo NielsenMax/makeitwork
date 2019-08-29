@@ -18,7 +18,7 @@ $idDeSesion = $_SESSION['id'];
     <link rel="stylesheet" href="welcome.css">
     <link rel="stylesheet" href="empresas.css">
     <script type="text/javascript" src="empresaajax.js"></script>
-    
+    <script type="text/javascript" src="js/addProajax.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -76,12 +76,13 @@ $idDeSesion = $_SESSION['id'];
 
                <div  align="center" id="proyectocreacion" style="display: none;">
                <h2 class="Titulo">Añadir proyecto</h2>
-        <p>Por favor complete los siguientes campos para añadir un proyecto.</p>
-                <input type="text" class="input" value="nombreP"id="nombrep">
+                <p>Por favor complete los siguientes campos para añadir un proyecto.</p>
+                <input type="text" class="input" placeholder="nombreP"id="nombrep">
+                <br>
+                <input type="textarea" class="input" placeholder="Ingrese una descripcion" id="descr">
                 <br>
                 <input type="button" class="button" id="añadirproy" value="Añadir"> 
-                <div  id="rpAñadir">
-                </div>
+                <div  id="rpAñadir"></div>
             </div>
         </div>
 </div>
@@ -90,10 +91,14 @@ $idDeSesion = $_SESSION['id'];
             $("#añadir2").click(function(){
               $("#usuariocreacion").show();
               $("#añadir2").hide();
+              $("#añadir3").show();
+              $("#proyectocreacion").hide();
             });
             $("#añadir3").click(function(){
               $("#proyectocreacion").show();
               $("#añadir3").hide();
+              $("#añadir2").show();
+              $("#usuariocreacion").hide();
             });
           });
             </script>

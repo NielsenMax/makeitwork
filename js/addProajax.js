@@ -1,25 +1,26 @@
 $(document).ready(function(){
-    $("#").click(function (){
-        if($("#NAMEEEEE").val()){
+    $("#añadirproy").click(function (){
+        if($("#nombrep").val()){
+            console.log($("#nombrep").val());
             $.ajax({    
                 type: "POST",
                 data: {
                     "idEmp"         : $("#idEmp").val(),
-                    "name"          : $("#NAMEEEE").val(),
-                    "descripcion"   : $("#DESCRIP").val()
+                    "name"          : $("#nombrep").val(),
+                    "descripcion"   : $("#descr").val()
                 },
                 url: "scriptsPHP/addProyectos.php",             
                 dataType: "html",   //expect html to be returned                
                 success: function(response){                    
-                    $("#RESPUESTA").html(response); 
+                    $("#rpAñadir").html(response); 
                     
                 },
                 error: function() {
-                    console.log("No se ha podido obtener el nombre de la Empresa");
+                    $("#rpAñadir").html("<p>Error!</p>"); 
                 }
         });
         }else{
-            $("#RESPUESTA").html("<p>El nombre es requerido</p>"); 
+            $("#rpAñadir").html("<p>El nombre es requerido</p>"); 
         }
     });
 });

@@ -1,9 +1,8 @@
 <?php
 
-require_once "config.php";
+require_once "../config.php";
 
 header("Content-Type: application/json; charset=UTF-8");
-
 $res=$mysqli->query("insert into proyectos (idEmpresa, estado, name, descripcion) 
                 values ('".$_POST["idEmp"]."','1','".$_POST["name"]."','".$_POST["descripcion"]."')");
 if($res){
