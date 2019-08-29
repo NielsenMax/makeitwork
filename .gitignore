@@ -1,0 +1,18 @@
+Backups
+blob_storage
+Cache
+CachedData
+CachedExtensions
+GPUCache
+logs
+User
+webrtc_event_logs
+1.34.0-main.sock
+1.34.0-shared.sock
+Cookies
+Cookies-journal
+languagepacks.json
+machineid
+Network Persistent State
+rapid_render.json
+storage.json
