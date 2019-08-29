@@ -40,10 +40,12 @@ $(document).ready(function(){
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#rAñadir").html(response); 
+                printeo();
                 
             },
             error: function() {
                 console.log("No se ha podido obtener el nombre de la Empresa");
+                
             }
         });
     });
@@ -63,5 +65,18 @@ $(document).ready(function(){
     
         });
       });
+     function printeo() { 
+        $.ajax({    //create an ajax request to display.php
+            type: "GET",
+            data: {"idEmp" : $("#idEmp").val()},
+            url: "mostrarUsuarios.php",             
+            dataType: "html",   //expect html to be returned                
+            success: function(response){                    
+                $("#responsecontainer2").html(response); 
+                //alert(response);
+            }
     
+        });
+      };
+    printeo();
 });

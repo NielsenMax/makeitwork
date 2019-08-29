@@ -45,25 +45,67 @@ $idDeSesion = $_SESSION['id'];
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
     <!-- Fin variables -->
-    <div id="empName"></div>
-    
-                <input type="text" id="emailUser">
-           
-                <input type="button" id="añadir" value="Añadir"> 
-            
-            <div  id="rAñadir">
-            
-        </div>
-    </div>
+    <div id="empName">
+      </div>
+<div class="creaciones" style="display: flex;flex-direction: row;justify-content: space-around;">    
 
-    <h3 >Todas las empresas</h3>
+    <!--  USUARIOS  -->
+              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
+                <input type="button" class="button" id="añadir2" value="Añadir Usuario"> 
+                </div>
+            
+            
+
+               <div  align="center" id="usuariocreacion" style="display: none;">
+               <h2 class="Titulo">Añadir usuario</h2>
+        <p>Por favor complete los siguientes campos para añadir un usuario.</p>
+                <input type="text" class="input" value="E-mail"id="emailUser">
+                <br>
+                <input type="button" class="button" id="añadir" value="Añadir"> 
+                <div  id="rAñadir">
+                </div>
+            </div>
+        
+      <!--  PROYECTO -->
+    
+              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
+                <input type="button" class="button" id="añadir3" value="Añadir Proyecto"> 
+                </div>
+            
+            
+
+               <div  align="center" id="proyectocreacion" style="display: none;">
+               <h2 class="Titulo">Añadir proyecto</h2>
+        <p>Por favor complete los siguientes campos para añadir un proyecto.</p>
+                <input type="text" class="input" value="nombreP"id="nombrep">
+                <br>
+                <input type="button" class="button" id="añadirproy" value="Añadir"> 
+                <div  id="rpAñadir">
+                </div>
+            </div>
+        </div>
+</div>
+    <script>
+            $(document).ready(function(){
+            $("#añadir2").click(function(){
+              $("#usuariocreacion").show();
+              $("#añadir2").hide();
+            });
+            $("#añadir3").click(function(){
+              $("#proyectocreacion").show();
+              $("#añadir3").hide();
+            });
+          });
+            </script>
+
+ <!--   <h3 >Todas las empresas</h3>
   
 
        <input type="button" id="mostrar" value="Display All Data" /> 
    
 
 <section class="fullcont">
-  <!--for demo wrap-->
+  for demo wrap-->
   <h1>Fixed Table header</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
