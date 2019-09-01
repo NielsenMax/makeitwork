@@ -36,6 +36,7 @@ create table if not exists usersDeEmpresas(
     FOREIGN KEY (idUser) REFERENCES users(id),
     FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
 );");
+//El estado es 1 si esta abierto el proyecto
 $mysqli->query("
 create table if not exists proyectos(
     id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,

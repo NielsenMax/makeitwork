@@ -1,4 +1,22 @@
 $(document).ready(function(){
+    //Hover proyectos
+    $("#displayProy").hover(function printData() { 
+        $.ajax({    //create an ajax request to display.php
+            type: "POST",
+            data: {"idEmp" : $("#idEmp").val()},
+            url: "scriptsPHP/showActiveProy.php",             
+            dataType: "html",   //expect html to be returned                
+            success: function(response){                    
+                $("#activeProy").html(response); 
+                //alert(response);
+            },
+            error: function() {
+                console.log("No se ha podido obtener la información");
+            }
+    
+         });
+    });
+    //Hover de Empresas
     $("#display").hover(function printData() { 
         $.ajax({    //create an ajax request to display.php
             type: "GET",
@@ -15,6 +33,7 @@ $(document).ready(function(){
     
          });
     });
+    //Mostrar el nombre de la empresa en la q estoy
     $.ajax({    
         type: "GET",
         data: {"idEmp" : $("#idEmp").val()},
@@ -29,6 +48,7 @@ $(document).ready(function(){
         }
 
     });
+    //Añadir usuarios a empresas
     $("#añadir").click(function (){
         $.ajax({    
             type: "POST",
@@ -52,6 +72,7 @@ $(document).ready(function(){
     $('#usern').click(function (){
         window.location = "welcome.php";
     });
+    //Mostrar los usuarios
     $("#mostrar").click(function() { 
         $.ajax({    //create an ajax request to display.php
             type: "GET",
