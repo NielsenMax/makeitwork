@@ -34,7 +34,7 @@ $idDeSesion = $_SESSION['id'];
         </div> 
         <!--Empresas-->
         <div class="dropdown">
-            <button class="dropbtn" id="display"><b>Empresas</b>
+            <button class="dropbtn" style="cursor: pointer;" onclick="window.location.href='./welcome.php'" id="display"><b>Empresas</b>
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="responsecontainer" >
@@ -46,73 +46,115 @@ $idDeSesion = $_SESSION['id'];
             <button class="dropbtn" id="displayProy"><b>Proyectos activos</b>
             <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="activeProy" >
-                
+            <div class="dropdown-content" id="activeProy" >      
             </div>
         </div>
+</div>
 
-    </div>
     <!--variables-->
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
     <!-- Fin variables -->
-    <div id="empName">
-      </div>
-<div class="creaciones" style="display: flex;flex-direction: row;justify-content: space-around;">    
-
-    <!--  USUARIOS  -->
-              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
-                <input type="button" class="button" id="añadir2" value="Añadir Usuario"> 
-                </div>
+<div id="empName">
+</div>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                <input type="button" class="button" id="añadir2" onclick="AU()" value="Añadir Usuario">
+                <input type="button" class="button" id="añadir3" onclick="AP()" value="Añadir Proyecto">
+                <input type="button" class="button" id="eliminar2" onclick="EU()" value="Eliminar Usuario">
+                <input type="button" class="button" id="eliminar3" onclick="EP()" value="Eliminar Proyecto"> 
+            </div>
             
-            
-
-               <div  align="center" id="usuariocreacion" style="display: none;">
-               <h2 class="Titulo">Añadir usuario</h2>
-        <p>Por favor complete los siguientes campos para añadir un usuario.</p>
-                <input type="text" class="input" value="E-mail"id="emailUser">
+            <div  align="center" id="usuariocreacion" style="display:none;">
+                <h2 class="Titulo">Añadir usuario</h2>
+                <p>Por favor complete los siguientes campos para añadir un usuario.</p>
+                <input type="text" class="input" placeholder="E-mail" id="emailUser">
                 <br>
                 <input type="button" class="button" id="añadir" value="Añadir"> 
                 <div  id="rAñadir">
                 </div>
             </div>
-        
-      <!--  PROYECTO -->
-    
-              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
-                <input type="button" class="button" id="añadir3" value="Añadir Proyecto"> 
-                </div>
             
-            
-
-               <div  align="center" id="proyectocreacion" style="display: none;">
-               <h2 class="Titulo">Añadir proyecto</h2>
+            <div  align="center" id="proyectocreacion" style="display:none;">
+                <h2 class="Titulo">Añadir proyecto</h2>
                 <p>Por favor complete los siguientes campos para añadir un proyecto.</p>
-                <input type="text" class="input" placeholder="nombreP"id="nombrep">
+                <input type="text" class="input" placeholder="Nombre del proyecto" id="nombrep">
                 <br>
-                <input type="textarea" class="input" placeholder="Ingrese una descripcion" id="descr">
+                <input type="textarea" class="input" placeholder="Descripcion" id="descr">
                 <br>
                 <input type="button" class="button" id="añadirproy" value="Añadir"> 
                 <div  id="rpAñadir"></div>
+            </div> 
+
+            <div  align="center" id="usuarioeliminacion" style="display:none;">
+              <h2 class="Titulo">Eliminar usuario</h2>
+              <p>Por favor ingrese el e-mail del usuario que desea eliminar.</p>
+              <input type="text" class="input" placeholder="E-mail" id="emailUser">
+              <br>
+              <input type="button" class="button" id="Eliminar" value="Eliminar"> 
+              <div  id="rEliminar">
+              </div>
             </div>
-        </div>
-</div>
+        
+            <div  align="center" id="proyectoeliminacion" style="display:none;">
+                <h2 class="Titulo">Eliminar proyecto</h2>
+                <p>Por favor ingrese el nombre del proyecto que desea eliminar.</p>
+                <input type="text" class="input" placeholder="Nombre del proyecto" id="nombrep">
+                <br>
+                <input type="button" class="button" id="eliminarproy" value="Eliminar"> 
+                <div  id="rpEliminar"></div>
+            </div>
     <script>
             $(document).ready(function(){
-            $("#añadir2").click(function(){
+            $("#añadir2").click(function(){  //añadir usuario
               $("#usuariocreacion").show();
-              $("#añadir2").hide();
-              $("#añadir3").show();
+              $("#usuarioeliminacion").hide();
+              $("#proyectocreacion").hide();
+              $("#proyectoeliminacion").hide();
+            });
+            $("#añadir3").click(function(){  //añadir proyecto
+              $("#proyectocreacion").show();
+              $("#usuariocreacion").hide();
+              $("#usuarioeliminacion").hide();
+              $("#proyectoeliminacion").hide();
+            });
+            $("#eliminar2").click(function(){ //eliminar usuario
+              $("#usuarioeliminacion").show();
+              $("#usuariocreacion").hide();
+              $("#proyectoeliminacion").hide();
               $("#proyectocreacion").hide();
             });
-            $("#añadir3").click(function(){
-              $("#proyectocreacion").show();
-              $("#añadir3").hide();
-              $("#añadir2").show();
+            $("#eliminar3").click(function(){ //eliminar proyecto
+              $("#proyectoeliminacion").show();
               $("#usuariocreacion").hide();
+              $("#usuarioeliminacion").hide();
+              $("#proyectocreacion").hide();
             });
           });
-            </script>
+        function AU() {
+          document.getElementById('añadir2').setAttribute("class", "button2")
+          document.getElementById('añadir3').setAttribute("class", "button")
+          document.getElementById('eliminar2').setAttribute("class", "button")
+          document.getElementById('eliminar3').setAttribute("class", "button")
+        }
+        function AP() {
+          document.getElementById('añadir2').setAttribute("class", "button")
+          document.getElementById('añadir3').setAttribute("class", "button2")
+          document.getElementById('eliminar2').setAttribute("class", "button")
+          document.getElementById('eliminar3').setAttribute("class", "button")
+        }
+        function EU() {
+          document.getElementById('añadir2').setAttribute("class", "button")
+          document.getElementById('añadir3').setAttribute("class", "button")
+          document.getElementById('eliminar2').setAttribute("class", "button2")
+          document.getElementById('eliminar3').setAttribute("class", "button")
+        }
+        function EP() {
+          document.getElementById('añadir2').setAttribute("class", "button")
+          document.getElementById('añadir3').setAttribute("class", "button")
+          document.getElementById('eliminar2').setAttribute("class", "button")
+          document.getElementById('eliminar3').setAttribute("class", "button2")
+        }
+    </script>
 
  <!--   <h3 >Todas las empresas</h3>
   
@@ -122,6 +164,7 @@ $idDeSesion = $_SESSION['id'];
 
 <section class="fullcont">
   for demo wrap-->
+  <!--
   <h1>Fixed Table header</h1>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -141,3 +184,4 @@ $idDeSesion = $_SESSION['id'];
 <div >
 </body>
 </html>
+-->
