@@ -73,19 +73,32 @@ $idDeSesion = $_SESSION['id'];
       <div class="flex">
         <input type="button" id="foo" class="button" onclick="empresaC()" value="Nueva empresa"/>
         <input type="button" id="foo2" class="button" onclick="empresaM()" value="Ver mis empresas"/>
+        <input type="button" id="foo3" class="button" onclick="empresaE()" value="Eliminar empresa"/>
       </div>
       <script>
         function empresaC() {
-          document.getElementById('empresaCreacion').style.display = "";
+          document.getElementById('empresaCreacion').style = ""
           document.getElementById('empresaMuestreo').style = "display:none;"
-          document.getElementById('foo').setAttribute("class", "button2");
-          document.getElementById('foo2').setAttribute("class", "button");
+          document.getElementById('empresaEliminacion').style = "display:none;"
+          document.getElementById('foo').setAttribute("class", "button2")
+          document.getElementById('foo2').setAttribute("class", "button")
+          document.getElementById('foo3').setAttribute("class", "button")
         }
         function empresaM() {
-          document.getElementById('empresaMuestreo').style.display = "";
           document.getElementById('empresaCreacion').style = "display:none;"
-          document.getElementById('foo2').setAttribute("class", "button2");
-          document.getElementById('foo').setAttribute("class", "button");
+          document.getElementById('empresaMuestreo').style = ""
+          document.getElementById('empresaEliminacion').style = "display:none;"
+          document.getElementById('foo2').setAttribute("class", "button2")
+          document.getElementById('foo').setAttribute("class", "button")
+          document.getElementById('foo3').setAttribute("class", "button")
+        }
+        function empresaE() {
+          document.getElementById('empresaCreacion').style = "display:none;"
+          document.getElementById('empresaMuestreo').style = "display:none;"
+          document.getElementById('empresaEliminacion').style = ""
+          document.getElementById('foo2').setAttribute("class", "button")
+          document.getElementById('foo').setAttribute("class", "button")
+          document.getElementById('foo3').setAttribute("class", "button2")
         }
         </script>
     
@@ -104,9 +117,14 @@ $idDeSesion = $_SESSION['id'];
     </div>
     <div align="center" id="empresaMuestreo" style="display:none;">
         <h2 class="Titulo">Mis empresas</h2>
-        <p>Estas son las empresas que usted ya creó.</p>
-        <div id="empresasCreadas" >
+        <div id="empresasCreadas"></div>
     </div>
+
+    <div align="center" id="empresaEliminacion" style="display:none;">
+        <h2 class="Titulo">Eliminar una empresa</h2>
+        <div id="empresasCreadas"></div>
+    </div>
+
 </form>
 </body>
 </html>
