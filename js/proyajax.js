@@ -36,11 +36,11 @@ $(document).ready(function(){
     //Mostrar el nombre de la empresa en la q estoy
     $.ajax({    
         type: "GET",
-        data: {"idEmp" : $("#idEmp").val()},
-        url: "../mostrarNombreEmpresa.php",             
+        data: {"idProy" : $("#idProy").val()},
+        url: "../scriptsPHP/mostrarNombreProy.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
-            $("#empName").html(response); 
+            $("#proyName").html(response); 
             //alert(response);
         },
         error: function() {
