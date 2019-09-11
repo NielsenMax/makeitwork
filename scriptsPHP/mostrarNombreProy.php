@@ -1,6 +1,6 @@
 <?php 
 
-include("config.php");
+include("../config.php");
 
 $result=$mysqli->query("select name from proyectos where id='".$_GET['idProy']."';");
 
