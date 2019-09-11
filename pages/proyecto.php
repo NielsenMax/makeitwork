@@ -26,8 +26,8 @@ $idDeSesion = $_SESSION['id'];
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" >
-                <a href="resetpssw.php" >Cambie su contraseña</a>
-                <a href="logout.php" >Cerrar sesion</a>
+                <a href="../resetpssw.php" >Cambie su contraseña</a>
+                <a href="../logout.php" >Cerrar sesion</a>
                 
             </div>
         </div> 
@@ -54,6 +54,7 @@ $idDeSesion = $_SESSION['id'];
     <!--variables-->
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["proy"]); ?>" id="idProy">
+    <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
     <!-- Fin variables -->
     <div id="proyName">
       </div>
