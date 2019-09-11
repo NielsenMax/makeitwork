@@ -4,7 +4,7 @@ $(document).ready(function(){
         $.ajax({    //create an ajax request to display.php
             type: "POST",
             data: {"idEmp" : $("#idEmp").val()},
-            url: "scriptsPHP/showActiveProy.php",             
+            url: "../scriptsPHP/showActiveProy.php",             
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#activeProy").html(response); 
@@ -21,7 +21,7 @@ $(document).ready(function(){
         $.ajax({    //create an ajax request to display.php
             type: "GET",
             data: {"idOwner" : $("#idOwner").val()},
-            url: "mostrarEmpresas.php",             
+            url: "../mostrarEmpresas.php",             
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#responsecontainer").html(response); 
@@ -37,7 +37,7 @@ $(document).ready(function(){
     $.ajax({    
         type: "GET",
         data: {"idEmp" : $("#idEmp").val()},
-        url: "mostrarNombreEmpresa.php",             
+        url: "../mostrarNombreEmpresa.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#empName").html(response); 
@@ -56,7 +56,7 @@ $(document).ready(function(){
                 "email" : $("#emailUser").val(),
                 "idEmp" : $("#idEmp").val()
             },
-            url: "addUser2Emp.php",             
+            url: "../addUser2Emp.php",             
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#rAñadir").html(response); 
@@ -77,7 +77,7 @@ $(document).ready(function(){
         $.ajax({    //create an ajax request to display.php
             type: "GET",
             data: {"idEmp" : $("#idEmp").val()},
-            url: "mostrarUsuarios.php",             
+            url: "../mostrarUsuarios.php",             
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#responsecontainer2").html(response); 
@@ -90,7 +90,7 @@ $(document).ready(function(){
         $.ajax({    //create an ajax request to display.php
             type: "GET",
             data: {"idEmp" : $("#idEmp").val()},
-            url: "mostrarUsuarios.php",             
+            url: "../mostrarUsuarios.php",             
             dataType: "html",   //expect html to be returned                
             success: function(response){                    
                 $("#responsecontainer2").html(response); 

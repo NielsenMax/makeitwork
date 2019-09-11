@@ -9,7 +9,7 @@ $(document).ready(function(){
                     "name"          : $("#nombrep").val(),
                     "descripcion"   : $("#descr").val()
                 },
-                url: "scriptsPHP/addProyectos.php",             
+                url: "../scriptsPHP/addProyectos.php",             
                 dataType: "html",   //expect html to be returned                
                 success: function(response){                    
                     $("#rpAñadir").html(response); 

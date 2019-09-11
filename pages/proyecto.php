@@ -12,13 +12,12 @@ $idDeSesion = $_SESSION['id'];
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Empresas</title>
+    <title>Proyecto</title>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../welcome.css">
     <link rel="stylesheet" href="../empresas.css">
-    <script type="text/javascript" src="../js/empresaajax.js"></script>
-    <script type="text/javascript" src="../js/addProajax.js"></script>
+    <script type="text/javascript" src="../js/proyajax.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -54,9 +53,9 @@ $idDeSesion = $_SESSION['id'];
     </div>
     <!--variables-->
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
-    <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
+    <input type="button" hidden value="<?php echo htmlspecialchars($_GET["proy"]); ?>" id="idProy">
     <!-- Fin variables -->
-    <div id="empName">
+    <div id="proyName">
       </div>
 <div class="creaciones" style="display: flex;flex-direction: row;justify-content: space-around;">    
 

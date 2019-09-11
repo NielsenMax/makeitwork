@@ -15,10 +15,10 @@ $idDeSesion = $_SESSION['id'];
     <title>Empresas</title>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="welcome.css">
-    <link rel="stylesheet" href="empresas.css">
-    <script type="text/javascript" src="js/empresaajax.js"></script>
-    <script type="text/javascript" src="js/addProajax.js"></script>
+    <link rel="stylesheet" href="../welcome.css">
+    <link rel="stylesheet" href="../empresas.css">
+    <script type="text/javascript" src="../js/empresaajax.js"></script>
+    <script type="text/javascript" src="../js/addProajax.js"></script>
 </head>
 <body>
 <div class="navbar">
