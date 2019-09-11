@@ -34,7 +34,7 @@ $idDeSesion = $_SESSION['id'];
         </div> 
         <!--Empresas-->
         <div class="dropdown">
-            <button class="dropbtn" style="cursor: pointer;" onclick="window.location.href='welcome.php'" id="display"><b>Empresas</b>
+            <button class="dropbtn" style="cursor: pointer;" onclick="window.location.href='empresas.php'" id="display"><b>Empresas</b>
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="responsecontainer" >
