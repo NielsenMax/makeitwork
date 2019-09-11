@@ -7,7 +7,7 @@ $(document).ready(function(){
                 data: {"name" : $("#nombre_empresa").val(), "idOwner" : $("#idOwner").val() },
                 type: "POST",
                 dataType: 'text',
-                url: 'crearEmpresa.php',
+                url: '../crearEmpresa.php',
                 error: function() {
                     alert("No se ha podido obtener la información");
                 }
@@ -29,7 +29,7 @@ $(document).ready(function(){
        $.ajax({    //create an ajax request to display.php
         type: "GET",
         data: {"idOwner" : $("#idOwner").val() },
-        url: "mostrarTodasTusEmpresas.php",             
+        url: "../mostrarTodasTusEmpresas.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#empresasCreadas").html(response); 
@@ -43,7 +43,7 @@ $(document).ready(function(){
     $.ajax({    //create an ajax request to display.php
         type: "GET",
         data: {"idOwner" : $("#idOwner").val()},
-        url: "mostrarEmpresas.php",             
+        url: "../mostrarEmpresas.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#responsecontainer").html(response); 

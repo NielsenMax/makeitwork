@@ -37,7 +37,7 @@ $(document).ready(function(){
     $.ajax({    
         type: "GET",
         data: {"idEmp" : $("#idEmp").val()},
-        url: "mostrarNombreEmpresa.php",             
+        url: "../mostrarNombreEmpresa.php",             
         dataType: "html",   //expect html to be returned                
         success: function(response){                    
             $("#empName").html(response); 
