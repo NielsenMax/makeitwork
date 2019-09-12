@@ -18,6 +18,7 @@ $idDeSesion = $_SESSION['id'];
     <link rel="stylesheet" href="../welcome.css">
     <link rel="stylesheet" href="../empresas.css">
     <script type="text/javascript" src="../js/lobbyempajax.js"></script>
+    <script type="text/javascript" src="../js/empresaajax.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -47,9 +48,10 @@ $idDeSesion = $_SESSION['id'];
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
 
-    <h2 class="Titulo">Mis empresas</h2>
+    <h2 class="Titulo" style="font-size:50px;">Mis empresas</h2>
         <div class="gridcont" id="empresamuestreo2" >
         <div id="empresasCreadas"></div>
+        
     </div>
     </form>
 </body>
