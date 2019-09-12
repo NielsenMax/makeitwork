@@ -36,6 +36,7 @@ create table if not exists usersDeEmpresas(
     FOREIGN KEY (idUser) REFERENCES users(id),
     FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
 );");
+//Para proyectos
 //El estado es 1 si esta abierto el proyecto
 $mysqli->query("
 create table if not exists proyectos(
@@ -46,13 +47,24 @@ create table if not exists proyectos(
     descripcion varchar(255),
     FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
 );");
+//Tareas
+//El estado es 1 si esta abierto el proyecto
 $mysqli->query("
-create table if not exists proyectosDeEmpresas(
+create table if not exists tareas(
     id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
-    idEmpresa int not null,
     idProyecto int not null,
-    FOREIGN KEY (idProyecto) REFERENCES proyectos(id),
-    FOREIGN KEY (idEmpresa) REFERENCES empresas(id)
+    estado int not null,
+    name varchar(255) not null,
+    descripcion varchar(255),
+    deadline date,
+    FOREIGN KEY (idProyecto) REFERENCES proyectos(id)
 );");
-
+$mysqli->query("
+create table if not exists userDeTareas(
+    id int NOT NULL PRIMARY KEY unique AUTO_INCREMENT,
+    idUser int not null,
+    idTarea int not null,
+    FOREIGN KEY (idUser) REFERENCES users(id),
+    FOREIGN KEY (idTarea) REFERENCES tareas(id)
+);");
 ?>

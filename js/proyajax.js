@@ -44,8 +44,32 @@ $(document).ready(function(){
             //alert(response);
         },
         error: function() {
-            console.log("No se ha podido obtener el nombre de la Empresa");
+            console.log("No se ha podido obtener el nombre del proyecto");
         }
 
+    });
+    $("#añadirTarea").click(function (){
+        if($("#nameTarea").val()){
+            console.log($("#deadline").val());
+            $.ajax({    
+                type: "POST",
+                data: {
+                    "idProy"         : $("#idProy").val(),
+                    "name"          : $("#nameTarea").val(),
+                    "descripcion"   : $("#descripcionTarea").val()
+                },
+                url: "../scriptsPHP/addTareas.php",             
+                dataType: "html",   //expect html to be returned                
+                success: function(response){                    
+                    $("#rAñadirTarea").html(response); 
+                    
+                },
+                error: function() {
+                    $("#rAñadirTarea").html("<p>Error!</p>"); 
+                }
+        });
+        }else{
+            $("#rAñadirTarea").html("<p>El nombre es requerido</p>"); 
+        }
     });
 });

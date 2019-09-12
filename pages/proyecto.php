@@ -62,18 +62,20 @@ $idDeSesion = $_SESSION['id'];
 
     <!--  USUARIOS  -->
               <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
-                <input type="button" class="button" id="añadir2" value="Añadir Usuario"> 
+                <input type="button" class="button" id="añadir2" value="Añadir Tarea"> 
                 </div>
             
             
 
-               <div  align="center" id="usuariocreacion" style="display: none;">
-               <h2 class="Titulo">Añadir usuario</h2>
-        <p>Por favor complete los siguientes campos para añadir un usuario.</p>
-                <input type="text" class="input" value="E-mail"id="emailUser">
+               <div  align="center" id="tareacreacion" style="display: none;">
+               <h2 class="Titulo">Añadir tarea</h2>
+        <p>Por favor complete los siguientes campos para añadir una tarea.</p>
+                <input type="text" class="input" placeholder="Nombre de la tarea" id="nameTarea">
                 <br>
-                <input type="button" class="button" id="añadir" value="Añadir"> 
-                <div  id="rAñadir">
+                <input type="text" class="input" placeholder="Ingrese una descripcion" id="descripcionTarea">
+                <br>
+                <input type="button" class="button" id="añadirTarea" value="Añadir"> 
+                <div  id="rAñadirTarea">
                 </div>
             </div>
         
@@ -100,7 +102,7 @@ $idDeSesion = $_SESSION['id'];
     <script>
             $(document).ready(function(){
             $("#añadir2").click(function(){
-              $("#usuariocreacion").show();
+              $("#tareacreacion").show();
               $("#añadir2").hide();
               $("#añadir3").show();
               $("#proyectocreacion").hide();
@@ -109,7 +111,7 @@ $idDeSesion = $_SESSION['id'];
               $("#proyectocreacion").show();
               $("#añadir3").hide();
               $("#añadir2").show();
-              $("#usuariocreacion").hide();
+              $("#tareacreacion").hide();
             });
           });
             </script>
