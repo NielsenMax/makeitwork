@@ -40,19 +40,42 @@ $(document).ready(function(){
     }
   
     $("#display").hover(function printData() { 
-    $.ajax({    //create an ajax request to display.php
-        type: "GET",
-        data: {"idOwner" : $("#idOwner").val()},
-        url: "../mostrarEmpresas.php",             
-        dataType: "html",   //expect html to be returned                
-        success: function(response){                    
-            $("#responsecontainer").html(response); 
-            //alert(response);
-        },
-        error: function() {
-            console.log("No se ha podido obtener la información");
-        }
+        $.ajax({    //create an ajax request to display.php
+            type: "GET",
+            data: {"idOwner" : $("#idOwner").val()},
+            url: "../mostrarEmpresas.php",             
+            dataType: "html",   //expect html to be returned                
+            success: function(response){                    
+                $("#responsecontainer").html(response); 
+                //alert(response);
+            },
+            error: function() {
+                console.log("No se ha podido obtener la información");
+            }
 
-     });
+        });
+    });
+    $("#deleteEmpresa").click(function (){
+        
+        if($("#empresaBorrar").val()){
+            $.ajax({    
+                type: "POST",
+                data: {
+                    "idOwner"   : $("#idOwner").val(),
+                    "emp"       : $("#empresaBorrar").val()
+                },
+                url: "../scriptsPHP/deleteEmpresa.php",             
+                dataType: "html",   //expect html to be returned                
+                success: function(response){                    
+                    $("#rDelete").html(response); 
+                    
+                },
+                error: function() {
+                    $("#rDelete").html("<p>Error!</p>"); 
+                }
+        });
+        }else{
+            $("#rDelete").html("<p>El nombre es requerido</p>"); 
+        }
     });
 });

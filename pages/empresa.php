@@ -88,7 +88,7 @@ $idDeSesion = $_SESSION['id'];
             <div  align="center" id="usuarioeliminacion" style="display:none;">
               <h2 class="Titulo">Eliminar usuario</h2>
               <p>Por favor ingrese el e-mail del usuario que desea eliminar.</p>
-              <input type="text" class="input" placeholder="E-mail" id="emailUser">
+              <input type="text" class="input" placeholder="E-mail" id="emailUserD">
               <br>
               <input type="button" class="button" id="Eliminar" value="Eliminar"> 
               <div  id="rEliminar">
@@ -98,7 +98,7 @@ $idDeSesion = $_SESSION['id'];
             <div  align="center" id="proyectoeliminacion" style="display:none;">
                 <h2 class="Titulo">Eliminar proyecto</h2>
                 <p>Por favor ingrese el nombre del proyecto que desea eliminar.</p>
-                <input type="text" class="input" placeholder="Nombre del proyecto" id="nombrep">
+                <input type="text" class="input" placeholder="Nombre del proyecto" id="nombrepD">
                 <br>
                 <input type="button" class="button" id="eliminarproy" value="Eliminar"> 
                 <div  id="rpEliminar"></div>

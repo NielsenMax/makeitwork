@@ -66,6 +66,7 @@ $idDeSesion = $_SESSION['id'];
         <h1 style="">Hola, <i><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></i>.</h1>
         <h1 class="Roboto">Bienvenido a <i>MakeItWork</i>.</h1>
     </div>
+    <!-- Variables -->
     <input type="button" hidden value="<?php echo htmlspecialchars($_SESSION["id"]); ?>" id="idOwner">
     <p>
     </p>
@@ -123,6 +124,14 @@ $idDeSesion = $_SESSION['id'];
     <div align="center" id="empresaEliminacion" style="display:none;">
         <h2 class="Titulo">Eliminar una empresa</h2>
         <div id="empresasCreadas"></div>
+        <span class="help-block"></span>
+        <input type="text" placeholder="Nombre" name="username" class="input" id="empresaBorrar">
+        <span class="underlineU"></span>
+        <br>
+        <input type="button" class="button" value="Eliminar" id="deleteEmpresa">
+        <input type="reset" class="button" value="Resetear">
+        <br>
+        <div id="rDelete"></div>
     </div>
 
 </form>

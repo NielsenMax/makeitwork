@@ -100,4 +100,53 @@ $(document).ready(function(){
         });
       };
     printeo();
+
+    $("#Eliminar").click(function (){
+        
+        if($("#emailUserD").val()){
+
+            $.ajax({    
+                type: "POST",
+                data: {
+                    "email"   : $("#emailUserD").val(),
+                    "emp"       : $("#idEmp").val()
+                },
+                url: "../scriptsPHP/deleteUser.php",             
+                dataType: "html",   //expect html to be returned                
+                success: function(response){                    
+                    $("#rEliminar").html(response); 
+                    
+                },
+                error: function() {
+                    $("#rEliminar").html("<p>Error!</p>"); 
+                }
+        });
+        }else{
+            $("#rEliminar").html("<p>El email es requerido</p>"); 
+        }
+    });
+    $("#eliminarproy").click(function (){
+        
+        if($("#nombrepD").val()){
+
+            $.ajax({    
+                type: "POST",
+                data: {
+                    "name"   : $("#nombrepD").val(),
+                    "emp"       : $("#idEmp").val()
+                },
+                url: "../scriptsPHP/deleteProy.php",             
+                dataType: "html",   //expect html to be returned                
+                success: function(response){                    
+                    $("#rpEliminar").html(response); 
+                    
+                },
+                error: function() {
+                    $("#rpEliminar").html("<p>Error!</p>"); 
+                }
+        });
+        }else{
+            $("#rpEliminar").html("<p>El email es requerido</p>"); 
+        }
+    });
 });
