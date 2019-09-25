@@ -7,7 +7,7 @@ if($data = mysqli_fetch_row($r)){
     if($mysqli->query("DELETE FROM proyectos where id=".$data[0].";")){
         echo "<p>Eliminado con exito</p>";
     }else{
-        echo "<p>No se ha podido eliminar</p>";
+        echo "<p>El proyecto contiene tareas activas que deben ser borradas</p>";
     }
 }else{
     echo "<p>No existe un proyecto con ese nombre en esta empresa</p>";
