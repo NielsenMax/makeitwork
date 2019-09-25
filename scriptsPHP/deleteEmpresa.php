@@ -9,7 +9,7 @@ if($data = mysqli_fetch_row($r))
     if($res){
         echo "<p>Eliminada con exito</p>";
     }else{
-        echo "<p>No se ha podido eliminar</p>";
+        echo "<p>La empresa contiene proyectos activos que deben ser eliminados</p>";
     }
 }else{
     echo "<p>No existe una empresa con ese Nombre</p>";
