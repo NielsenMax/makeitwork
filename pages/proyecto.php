@@ -56,12 +56,13 @@ $idDeSesion = $_SESSION['id'];
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["proy"]); ?>" id="idProy">
     <input type="button" hidden value="<?php echo htmlspecialchars($_GET["emp"]); ?>" id="idEmp">
     <!-- Fin variables -->
+    
     <div id="proyName">
       </div>
-<div class="creaciones" style="display: flex;flex-direction: row;justify-content: space-around;">    
+<div class="creaciones" style="display: flex;flex-direction: row;justify-content: center;">    
 
     <!--  USUARIOS  -->
-              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
+              <div class="flex2" style="display: flex;flex-direction: row;justify-content:center;">
                 <input type="button" class="button" id="añadir2" value="Añadir Tarea"> 
                 </div>
             
@@ -79,25 +80,7 @@ $idDeSesion = $_SESSION['id'];
                 </div>
             </div>
         
-      <!--  PROYECTO -->
     
-              <div class="flex2" style="display: flex;flex-direction: row;justify-content: space-around;">
-                <input type="button" class="button" id="añadir3" value="Añadir Proyecto"> 
-                </div>
-            
-            
-
-               <div  align="center" id="proyectocreacion" style="display: none;">
-               <h2 class="Titulo">Añadir proyecto</h2>
-                <p>Por favor complete los siguientes campos para añadir un proyecto.</p>
-                <input type="text" class="input" placeholder="nombreP"id="nombrep">
-                <br>
-                <input type="textarea" class="input" placeholder="Ingrese una descripcion" id="descr">
-                <br>
-                <input type="button" class="button" id="añadirproy" value="Añadir"> 
-                <div  id="rpAñadir"></div>
-            </div>
-        </div>
 </div>
     <script>
             $(document).ready(function(){
@@ -122,24 +105,14 @@ $idDeSesion = $_SESSION['id'];
        <input type="button" id="mostrar" value="Display All Data" /> 
    
 
-<section class="fullcont">
-  for demo wrap-->
-  <h1>Fixed Table header</h1>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>NAME</th>
-          <th>MAIL</th>
+<section class="fullcont">-->
+ </div>
 
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div  class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody id="responsecontainer2">
-<div >
+    <!--variables-->
+ 
+        <div class="gridcont" id="empresamuestreo2" >
+        <div id="empresasCreadas"></div>
+        
+    </div>
 </body>
 </html>
