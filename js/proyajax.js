@@ -72,4 +72,38 @@ $(document).ready(function(){
             $("#rAñadirTarea").html("<p>El nombre es requerido</p>"); 
         }
     });
+    $.ajax({    //create an ajax request to display.php
+        type: "POST",
+        data: {"idProy" : $("#idProy").val()},
+        url: "../scriptsPHP/mostrarTareas.php",             
+        dataType: "html",   //expect html to be returned                
+        success: function(response){                    
+            $("#tareasmuestreo").html(response); 
+            //alert(response);
+        },
+        error: function() {
+            console.log("No se ha podido obtener la información");
+        }
+
+   
+    });
+    $(document).on("click", "#desc" , function() {
+        var idm = $(this).attr('xd');
+        console.log(idm);
+        var aux = "modal"+idm;
+        console.log(aux);
+      
+        cell=document.getElementById(aux);
+        cell.style.display="block";
+    });
+    $(document).on("click", "#close" , function() {
+        var idm = $(this).attr('xd');
+        console.log(idm);
+        var aux = "modal"+idm;
+        console.log(aux);
+      
+        cell=document.getElementById(aux);
+        cell.style.display="none";
+    });
+ 
 });

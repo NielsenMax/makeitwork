@@ -109,10 +109,11 @@ $idDeSesion = $_SESSION['id'];
  </div>
 
     <!--variables-->
- 
-        <div class="gridcont" id="empresamuestreo2" >
+          <br>
+        <div class="gridcont2" id="tareasmuestreo" >
         <div id="empresasCreadas"></div>
         
     </div>
+   
 </body>
 </html>
