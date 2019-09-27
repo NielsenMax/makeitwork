@@ -105,5 +105,27 @@ $(document).ready(function(){
         cell=document.getElementById(aux);
         cell.style.display="none";
     });
- 
+    $(document).on("click", "#part" , function() {
+        var idm = $(this).attr('xd');
+        console.log(idm);
+        var aux = "modalpart"+idm;
+        console.log(aux);
+      
+        cell=document.getElementById(aux);
+        cell.style.display="block";
+    });
+    $(document).on("click", "#closep" , function() {
+        var idm = $(this).attr('xd');
+        console.log(idm);
+        var aux = "modalpart"+idm;
+        console.log(aux);
+      
+        cell=document.getElementById(aux);
+        cell.style.display="none";
+                   
+         $("#añadirp2").show();
+        $("#añadirpartd").hide();
+        
+        
+    });
 });

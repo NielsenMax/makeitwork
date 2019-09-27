@@ -1,23 +1,23 @@
 $(document).ready(function(){
-    //!PONER ID del boton para añadir
-    $(document).on("click", "#" , function() {
-        //! Poner Id campo Email
-        email = document.getElementById("");
-        //! Poner id output
-        output = document.getElementById("");
+    $(document).on("click", "#añadirpart" , function() {
+        email = document.getElementById("namepart");
+        console.log($(email).attr('idtarea'))
+      
+        output = document.getElementById("rAñadirPart");
         $.ajax({
             type: "POST",
             url: "../scriptsPHP/addUserTarea.php",  
             data: {
-                "idTarea" : email.attr('idTarea'),
-                "email": email.val()
+                "idTarea" : $(email).attr('idtarea'),
+                
+                "email": $(email).val()
                 },
             dataType: "html",
             success: function (response) {
-                output.html(response);
+                $(output).html(response);
             },
             error: function(){
-                output.html("<p> Error en el servidor</p>");
+                $(output).html("<p> Error en el servidor</p>");
             }
         });
     });

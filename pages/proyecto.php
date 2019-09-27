@@ -18,6 +18,7 @@ $idDeSesion = $_SESSION['id'];
     <link rel="stylesheet" href="../welcome.css">
     <link rel="stylesheet" href="../empresas.css">
     <script type="text/javascript" src="../js/proyajax.js"></script>
+    <script type="text/javascript" src="../js/tareasajax.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -86,16 +87,10 @@ $idDeSesion = $_SESSION['id'];
             $(document).ready(function(){
             $("#añadir2").click(function(){
               $("#tareacreacion").show();
-              $("#añadir2").hide();
-              $("#añadir3").show();
+              $("#añadir2").hide();          
               $("#proyectocreacion").hide();
             });
-            $("#añadir3").click(function(){
-              $("#proyectocreacion").show();
-              $("#añadir3").hide();
-              $("#añadir2").show();
-              $("#tareacreacion").hide();
-            });
+           
           });
             </script>
 

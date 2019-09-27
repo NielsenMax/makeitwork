@@ -1,7 +1,7 @@
 
 <?php
 
-require_once "config.php";
+require_once "../config.php";
 
 header("Content-Type: application/json; charset=UTF-8");
 
@@ -17,7 +17,7 @@ if($idUser){
         echo "<p>Este usuario ya se encuentra en la tarea</p>";
     }else{
         $res2=$mysqli->query("insert into userDeTareas (idUser, idTarea) 
-                                values ('".$_POST["idUser"]."','".$idUSer[0]."');");
+                                values ('".$idUser[0]."','".$_POST["idTarea"]."');");
         if($res2)
         {
             echo "<p>Añadido con exito!</p>";
