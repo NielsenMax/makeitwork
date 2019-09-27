@@ -27,8 +27,8 @@ while($data = mysqli_fetch_row($result))
                 </div>
             
             
-
-               <div  align="center" id="añadirpartd" style="display: none;border-top:thick green;">
+                <div  align="center" id="añadirpartd" style="display: none; ">
+                <div style="width:100%;height:5px; background:radial-gradient(ellipse at center, #FFFEFA, #BBBBBB);"></div>
                <h2 class="Titulo">Añadir participante</h2>
         <p style="font-size: 50%">Por favor complete los siguientes campos para añadir un participante.</p>
                 <input type="text" class="input" idTarea="'.$data[0].'" placeholder="Email del participante" id="namepart">
