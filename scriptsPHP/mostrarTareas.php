@@ -22,31 +22,29 @@ while($data = mysqli_fetch_row($result))
     while($datap = mysqli_fetch_row($resultp)){
     echo "<p>".$datap[0]."</p>" ;}
     echo ' 
-   <div class="flex2" style="display: flex;flex-direction: row;justify-content:center;">
-                <input type="button" class="button" style="font-size: 50%;width:40%" id="añadirp2" value="Añadir Participante"> 
-                </div>
-            
-            
-                <div  align="center" id="añadirpartd" style="display: none; ">
-                <div style="width:100%;height:5px; background:radial-gradient(ellipse at center, #FFFEFA, #BBBBBB);"></div>
-               <h2 class="Titulo">Añadir participante</h2>
-        <p style="font-size: 50%">Por favor complete los siguientes campos para añadir un participante.</p>
-                <input type="text" class="input" idTarea="'.$data[0].'" placeholder="Email del participante" id="namepart">
-                <br>
-                <input type="button" style="font-size: 50%" class="button" id="añadirpart" value="Añadir"> 
-                <div  id="rAñadirPart">
-                </div>
-            </div>';
+      <div class="flex2" style="display: flex;flex-direction: row;justify-content:center;">
+        <input type="button" class="button" style="font-size: 50%;width:40%" id="añadirp'.$data[0].'" value="Añadir Participante"> 
+      </div>
+      <div  align="center" id="añadirpartd'.$data[0].'" style="display: none; ">
+        <div style="width:100%;height:5px; background:radial-gradient(ellipse at center, #FFFEFA, #BBBBBB);"></div>
+          <h2 class="Titulo">Añadir participante</h2>
+          <p style="font-size: 50%">Por favor complete los siguientes campos para añadir un participante.</p>
+          <input type="text" class="input" placeholder="Email del participante" id="namepart'.$data[0].'">
+          <br>
+          <input type="button" style="font-size: 50%" class="button cañadirpart" idTarea="'.$data[0].'" id="añadirpart'.$data[0].'" value="Añadir"> 
+          <div  id="rAñadirPart'.$data[0].'">
+        </div>
+      </div>';
           echo'  <script>
             $(document).ready(function(){
-            $("#añadirp2").click(function(){
-              $("#añadirpartd").show();
-              $("#añadirp2").hide();              
+            $("#añadirp'.$data[0].'").click(function(){
+              $("#añadirpartd'.$data[0].'").show();
+              $("#añadirp'.$data[0].'").hide();              
              
             });
-            $("#añadir3").click(function(){              
-              $("#añadirp2").show();
-              $("#añadirpartd").hide();
+            $("#añadirx'.$data[0].'").click(function(){              
+              $("#añadirp'.$data[0].'").show();
+              $("#añadirpartd'.$data[0].'").hide();
             });
           });
             </script>';
@@ -63,8 +61,13 @@ while($data = mysqli_fetch_row($result))
     echo "</div>";
     echo "</div>";
     echo "<div class='container2'>";
-    echo " <button  id='foo' class='button' style='font-size:50%;'> Estado ";
-    echo "</button>";
+	if($data[2]){
+		echo " <button id='foo' class='button' style='font-size:50%; background-color: green;'> Abierto ";
+		echo "</button>";
+	}else{
+		echo " <button id='foo' class='button' style='font-size:50%; background-color: red;'> Cerrado ";
+		echo "</button>";
+	}
     echo "</div>";
     echo "</div>";
   

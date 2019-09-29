@@ -62,6 +62,7 @@ $(document).ready(function(){
                 dataType: "html",   //expect html to be returned                
                 success: function(response){                    
                     $("#rAñadirTarea").html(response); 
+                    listaTareas();
                     
                 },
                 error: function() {
@@ -72,6 +73,8 @@ $(document).ready(function(){
             $("#rAñadirTarea").html("<p>El nombre es requerido</p>"); 
         }
     });
+    listaTareas();
+    function listaTareas(){
     $.ajax({    //create an ajax request to display.php
         type: "POST",
         data: {"idProy" : $("#idProy").val()},
@@ -84,9 +87,8 @@ $(document).ready(function(){
         error: function() {
             console.log("No se ha podido obtener la información");
         }
-
-   
     });
+    }
     $(document).on("click", "#desc" , function() {
         var idm = $(this).attr('xd');
         console.log(idm);
