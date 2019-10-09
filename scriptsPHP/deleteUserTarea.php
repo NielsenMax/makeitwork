@@ -12,7 +12,7 @@ if($idUser){
     $r=$mysqli->query("select id from userDeTareas where idUser='".$idUser[0]."' and idTarea='".$_POST['idTarea']."';");
     if($data = mysqli_fetch_row($r))
     { 
-        $res=$mysqli->query("delete from empresas where id=".$data[0].";");
+        $res=$mysqli->query("delete from userDeTareas where id=".$data[0].";");
         if($res){
             echo "<p>Eliminada con exito</p>";
         }else{
