@@ -15,12 +15,14 @@ while($data = mysqli_fetch_row($result))
     echo " <button  xd='".$data[0]."' class='button' id='part' style='font-size:50%;'>Participantes" ;
     echo "</button>";
     echo "</div>";
-    $resultp=$mysqli->query("select users.username from users inner join userDeTareas on users.id=userDeTareas.idUser where idTarea='".$data[0]."';");
+    $resultp=$mysqli->query("select users.username, users.id from users inner join userDeTareas on users.id=userDeTareas.idUser where idTarea='".$data[0]."';");
     echo "<div id='modalpart".$data[0]."' class='modal'>";
     echo "<div class='modal-content'>";
     echo "<span id='closep'xd='".$data[0]."'class='close'>&times;</span>";
     while($datap = mysqli_fetch_row($resultp)){
-    echo "<p>".$datap[0]."</p>" ;}
+      echo "<p>".$datap[0]."</p>" ;
+      echo "<span id='borrar' idTarea='".$data[0]."' idUser='".$datap[1]."' class='close borrarPart'>&times;</span>";
+    }
     echo ' 
       <div class="flex2" style="display: flex;flex-direction: row;justify-content:center;">
         <input type="button" class="button" style="font-size: 50%;width:40%" id="añadirp'.$data[0].'" value="Añadir Participante"> 
