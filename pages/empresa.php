@@ -19,6 +19,7 @@ $idDeSesion = $_SESSION['id'];
     <link rel="stylesheet" href="../empresas.css">
     <script type="text/javascript" src="../js/empresaajax.js"></script>
     <script type="text/javascript" src="../js/addProajax.js"></script>
+    <script type="text/javascript" src="../js/proylobby.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -155,33 +156,15 @@ $idDeSesion = $_SESSION['id'];
           document.getElementById('eliminar3').setAttribute("class", "button2")
         }
     </script>
+    <!--variables-->
 
- <!--   <h3 >Todas las empresas</h3>
-  
 
-       <input type="button" id="mostrar" value="Display All Data" /> 
-   
+    <h2 class="Titulo" style="font-size:50px;">Mis proyectos</h2>
+        <div class="gridcont" id="proymuestreo2" >
+        <div id="empresasCreadas"></div>
+        </div>
+      
 
-<section class="fullcont">
-  for demo wrap-->
-  <!--
-  <h1>Fixed Table header</h1>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>NAME</th>
-          <th>MAIL</th>
 
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div  class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody id="responsecontainer2">
-<div >
 </body>
 </html>
--->
