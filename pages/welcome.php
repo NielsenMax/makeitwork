@@ -24,7 +24,7 @@ $idDeSesion = $_SESSION['id'];
     <script type="text/javascript" src="../welcomeajax.js"></script>
 </head>
 
-<body style="background-image:url(../fondo-index.jpg)"> 
+<body style="background-image:url(../fondo-index.jpg);margin:0%"> 
 
 <body>
    <div class="navbar">
