@@ -62,10 +62,10 @@ while($data = mysqli_fetch_row($result))
     echo "</div>";
     echo "<div class='container2'>";
 	if($data[2]){
-		echo " <button id='foo' class='button' style='font-size:50%; background-color: green;'> Abierto ";
+		echo " <button id='foo' class='button estado' idTarea='".$data[0]."' style='font-size:50%; background-color: green;'> Abierto ";
 		echo "</button>";
 	}else{
-		echo " <button id='foo' class='button' style='font-size:50%; background-color: red;'> Cerrado ";
+		echo " <button id='foo' class='button estado' idTarea='".$data[0]."' style='font-size:50%; background-color: red;'> Cerrado ";
 		echo "</button>";
 	}
     echo "</div>";

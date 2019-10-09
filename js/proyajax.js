@@ -74,6 +74,24 @@ $(document).ready(function(){
         }
     });
     listaTareas();
+    $(document).on("click", ".estado" , function() {
+        let idTarea = $(this).attr('idTarea');
+        $.ajax({
+            type: "POST",
+            url: "../scriptsPHP/cambiarEstadoTarea.php",  
+            data: {
+                "idTarea" : idTarea
+                },
+            dataType: "html",
+            success: function (response) {
+                console.log(response);
+                listaTareas();
+            },
+            error: function(){
+                console.log("<p> Error en el servidor</p>");
+            }
+        });
+    });
     function listaTareas(){
     $.ajax({    //create an ajax request to display.php
         type: "POST",

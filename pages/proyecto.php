@@ -23,7 +23,7 @@ $idDeSesion = $_SESSION['id'];
 <body>
 <div class="navbar">
         <div class="dropdown">
-            <button id="usern"class="dropbtn"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
+            <button id="usern"class="dropbtn" onclick="window.location.href='empresas.php'"><b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" >
@@ -34,7 +34,7 @@ $idDeSesion = $_SESSION['id'];
         </div> 
         <!--Empresas-->
         <div class="dropdown">
-            <button class="dropbtn" id="display"><b>Empresas</b>
+            <button class="dropbtn" id="display" onclick="window.location.href='empresas.php'"><b>Empresas</b>
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="responsecontainer" >
