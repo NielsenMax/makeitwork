@@ -20,8 +20,11 @@ while($data = mysqli_fetch_row($result))
     echo "<div class='modal-content'>";
     echo "<span id='closep'xd='".$data[0]."'class='close'>&times;</span>";
     while($datap = mysqli_fetch_row($resultp)){
-      echo "<p>".$datap[0]."</p>" ;
-      echo "<span id='borrar' idTarea='".$data[0]."' idUser='".$datap[1]."' class='close borrarPart'>&times;</span>";
+      echo '<div class="grido" style="display: grid;text-align: center; position:relative; grid-template-columns: 90% 10% ;">';
+      //echo '<div class="grido2" style="display: grid;text-align: center; position:relative; grid-template-columns: 70% 30% ;">';
+      echo "<p style='margin : 5%;'>".$datap[0]."</p>" ;
+      echo "<span style='display: flex;align-items: center;justify-content: center;'id='borrar' idTarea='".$data[0]."' idUser='".$datap[1]."' class='close borrarPart'>&times;</span>";
+      echo '</div>';
     }
     echo ' 
       <div class="flex2" style="display: flex;flex-direction: row;justify-content:center;">
