@@ -134,6 +134,25 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(document).on("click", ".borrarT" , function() {
+        let idTarea = $(this).attr('idTarea');
+        $.ajax({
+            type: "POST",
+            url: "../scriptsPHP/deleteTarea.php",  
+            data: {
+                "idTarea" : idTarea
+                },
+            dataType: "html",
+            success: function (response) {
+                console.log(response);
+                listaTareas();
+            },
+            error: function(){
+                console.log(response);
+            }
+        });
+    });
         
     function listaTareas(){
     $.ajax({    //create an ajax request to display.php

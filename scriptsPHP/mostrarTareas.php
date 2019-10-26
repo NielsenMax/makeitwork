@@ -9,6 +9,9 @@ while($data = mysqli_fetch_row($result))
 {    
     echo "<div class='sombra2' >";
     echo "<div class='container2'>";
+    echo "<span style='display: flex;align-items: center;justify-content: center;'id='borrarTarea' idTarea='".$data[0]."' class='close borrarT'>&times;</span>";
+    echo "</div>";
+    echo "<div class='container2'>";
     echo "<h1>" . $data[3] ."</h1>";
     echo "</div>";
     echo "<div class='container2'>";
