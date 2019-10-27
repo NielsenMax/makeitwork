@@ -149,4 +149,11 @@ $(document).ready(function(){
             $("#rpEliminar").html("<p>El email es requerido</p>"); 
         }
     });
+    
+    let searchParams = new URLSearchParams(window.location.search);
+    if(searchParams.get('no')){
+        $("#eliminar2").hide();
+        $("#añadir2").hide();
+    }
+
 });
