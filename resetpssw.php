@@ -75,30 +75,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="singup.css">
+    
 </head>
 <body>
     <div class="wrapper">
-        <h2>Cambio de contraseña</h2>
+        <h2 class="Titulo">Cambio de contraseña</h2>
         <p>Por favor complete el formulario para el cambio de contraseña.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <label>Nueva contraseña</label>
-                <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
                 <span class="help-block"><?php echo $new_password_err; ?></span>
+                <p>Nueva contraseña</p>
+                <input type="password" name="new_password" class="input" value="<?php echo $new_password; ?>">
+                <span class="underlineU"></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirme la contraseña</label>
-                <input type="password" name="confirm_password" class="form-control">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                <p>Confirme la contraseña</p>
+                <input type="password" class="input" name="confirm_password" >
+                <span class="underlineU"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Enviar">
-                <a class="btn btn-link" href="welcome.php">Cancelar</a>
+            <div class="buttongroup">
+                <input type="submit" class="button" value="Enviar">
+                <input type="button" class="button" onclick="location.href='pages/welcome.php'" value="Cancelar">
+                
             </div>
         </form>
     </div>    

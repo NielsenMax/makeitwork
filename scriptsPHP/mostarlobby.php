@@ -15,7 +15,7 @@ while($data = mysqli_fetch_row($result))
     echo "<a href='empresa.php?emp=".$data[0]."' >" . $data[2] . "</a>";
     echo "</div>";
     echo "<div class='container'>";
-    echo " <button  id='foo' class='button' style='font-size:50%;'  onclick="."window.location.href='empresa.php?emp=".$data[0]."' >".Acceder ;
+    echo " <button  id='foo' class='button' style='font-size:50%;'  onclick="."window.location.href='empresa.php?emp=".$data[0]."' >"."Acceder" ;
     echo "</button>";
     echo "</div>";
     echo "</div>";

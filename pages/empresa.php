@@ -28,7 +28,7 @@ $idDeSesion = $_SESSION['id'];
             <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" >
-                <a href="resetpssw.php" >Cambie su contraseña</a>
+                <a href="../resetpssw.php" >Cambie su contraseña</a>
                 <a href="logout.php" >Cerrar sesion</a>
                 
             </div>
