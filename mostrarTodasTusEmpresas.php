@@ -6,7 +6,7 @@ $result=$mysqli->query("select name from empresas where idOwner='".$_GET['idOwne
 
 if ($result->num_rows == 0) {
 
-    echo "<h1>" . "Usted aún no creó ninguna empresa." . "</h1>";
+    echo "<h1>" . "No hay empresas." . "</h1>";
 }
 
 while($data = mysqli_fetch_row($result))

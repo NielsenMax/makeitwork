@@ -41,12 +41,12 @@ if($data = mysqli_fetch_row($r))
     // }
     $res=$mysqli->query("delete from empresas where id=".$data[0].";");
     if($res){
-        echo "<p>Eliminada con exito</p>";
+        echo "<p>Eliminada con éxito. Por favor, recargue la página.</p>";
     }else{
-        echo "<p>La empresa contiene proyectos activos que deben ser eliminados</p>";
+        echo "<p>La empresa contiene proyectos activos que deben ser eliminados.</p>";
     }
 }else{
-    echo "<p>No existe una empresa con ese Nombre</p>";
+    echo "<p>No existe una empresa con ese nombre.</p>";
 }
     
 
