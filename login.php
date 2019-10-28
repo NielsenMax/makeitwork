@@ -103,8 +103,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
      
     <div class="wrapper">
-        <h2 class="Titulo">Inicio de sesion</h2>
-        <p class="descripcion">Por favor ingrese sus datos para iniciar sesion.</p>
+        <h2 class="Titulo">Inicio de sesión</h2>
+        <p class="descripcion">Por favor ingrese sus datos para iniciar sesión.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group" <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
                 
@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div >
                 <input type="submit" class="button" value="Login" >
             </div>
-            <p class="descripcion">No tienes cuenta? <a href="signup.php">Registrese aqui</a>.</p>
+            <p class="descripcion">No tiene cuenta? <a href="signup.php">Registrese aqui</a></p>
         </form>
     </div>    
 </body>
